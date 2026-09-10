@@ -69,7 +69,7 @@ jobs:
           path: coverage/
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@9a5f45888e63a13a89047127e7d692881a206a48
+        uses: sonarsource/sonarqube-scan-action@53c3e32da6fe04fa0669a23b4bd2184d29e92314
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
