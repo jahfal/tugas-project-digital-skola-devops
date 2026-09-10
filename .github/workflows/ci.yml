@@ -96,7 +96,7 @@ jobs:
           timeout 30s bash -c 'until curl -s http://127.0.0.1:3000 > /dev/null; do sleep 1; done'
 
       - name: Setup k6
-        uses: grafana/k6-action@v0.4.0
+        uses: grafana/k6-action@v0.3.1
 
       - name: Run Smoke Test
         run: k6 run loadtest/script.js
