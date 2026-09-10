@@ -4,7 +4,9 @@ on:
   push:
     branches: [ sesi31-loadtest ]
   pull_request:
-    branches: [ sesi31-loadtest ]
+    branches:
+      - sesi30-devsecops
+      - sesi31-loadtest
 
 jobs:
   lint:
@@ -38,7 +40,7 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 24
-          cache: 'npm'
+          # cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci --ignore-scripts
@@ -85,7 +87,7 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 24
-          cache: 'npm'
+          # cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci --ignore-scripts
