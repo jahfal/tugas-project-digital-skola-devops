@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 24
-          cache: 'npm'
+          # cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci --ignore-scripts
@@ -69,7 +69,7 @@ jobs:
           path: coverage/
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v5
+        uses: sonarsource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -95,7 +95,8 @@ jobs:
           npm start &
           timeout 30s bash -c 'until curl -s http://127.0.0.1:3000 > /dev/null; do sleep 1; done'
 
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
       - name: Run Smoke Test
-        uses: grafana/k6-action@v0.4.0
-        with:
-          filename: loadtest/script.js
+        run: k6 run loadtest/script.js
