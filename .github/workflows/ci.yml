@@ -71,7 +71,7 @@ jobs:
           path: coverage/
 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@53c2132717906b3a0f7c23f2f8a1eb3d5236b374
+        uses: sonarsource/sonarqube-scan-action@4a4ee303251ae2ad41c2c8f8b8098ad84a32ffba
         with:
           args: >
             -Dsonar.branch.name=sesi31-loadtest
@@ -87,7 +87,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Setup Node.js
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        uses: actions/setup-node@b7352342df29c29367a7837059174092b3bc9e65
         with:
           node-version: 24
           # cache: 'npm'
