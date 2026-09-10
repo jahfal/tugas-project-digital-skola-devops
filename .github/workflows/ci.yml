@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ sesi31-loadtest ]
   pull_request:
-    branches: [ main ]
+    branches: [ sesi31-loadtest ]
 
 jobs:
   lint:
