@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const store = require('./store');
 
 const app = express();
+
+app.disable('x-powered-by');
 app.use(bodyParser.json());
 
 app.get('/', (_req, res) => {

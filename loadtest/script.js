@@ -21,5 +21,5 @@ export default function () {
   check(create, { '201': r => r.status === 201 });
   const list = http.get(`${BASE}/notes`);
   check(list, { '200': r => r.status === 200 });
-  sleep(Math.random() * 0.5);
+  sleep(0.5);
 }
